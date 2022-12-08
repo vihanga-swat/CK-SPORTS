@@ -1,0 +1,146 @@
+body{
+   background-color:black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)),url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.menu{
+    width: 85%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.logo{
+    width: 150px;
+
+}
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.menu ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.menu ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #1ac6ff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.menu ul li:hover::after{
+    width: 100%;
+}
+
+.sitemap{
+	width:fit-content;
+	height:480px;
+	margin:auto;
+}
+
+svg{
+	margin:auto;
+}
+
+.properties{
+	height:90%;
+}
+line{
+	stroke:white;
+	stroke-width:1;
+}	
+
+.rectclick rect{
+	fill:#b3e0ff;
+	transition: fill 0.4s, stroke 0.5s;
+    fill-opacity:50%;
+}
+
+.rectclick:hover rect{
+	fill:gray;
+	cursor:pointer;
+}
+
+.bttext{
+	font-weight:600;
+	text-align:center;
+}
+
+.bttext:hover{s
+	cursor:pointer;
+}
+
+.footer {
+    margin-top:10%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#1ac6ff ;
+    text-align: center;
+ }
+ .social > a {
+   font-size:24px;
+   width:40px;
+   height:40px;
+   line-height:40px;
+   display:inline-block;
+   text-align:center;
+   border-radius:100%;
+   border:1px solid rgb(0, 0, 0);
+   margin:8px 8px;
+   color:inherit;
+   opacity:0.75;
+ }
+ .copyright {
+   margin-top:15px;
+   text-align:center;
+   font-size:13px; 
+   margin-bottom:0;
+ }
+ 
+ .box {
+   color: inherit;
+   border: 2px solid #1ac6ff;
+   border-radius: 0px;
+   padding: 14px 36px;
+   display: inline-block;
+   font-family: "Lucida Console", Monaco, monospace;
+   font-size: 14px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 0 #1ac6ff;
+   -webkit-transition: ease-out 0.4s;
+   -moz-transition: ease-out 0.4s;
+   transition: ease-out 0.4s;
+   background-color:#1ac6ff;
+ }
+ 
+ .box:hover {
+   box-shadow: inset 0 100px 0 0 #1ac6ff;
+   color: white;
+ }
+ 
+ 
+ #outer {
+   width: 364px;
+   margin: 50px auto 0 auto;
+   text-align: center;
+ }
