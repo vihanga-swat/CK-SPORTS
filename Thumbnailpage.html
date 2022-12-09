@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Thumbnail Page</title>
+        <link rel="stylesheet" type="text/css" href="w1839048/thumbnailstyle.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        />
+    </head>
+    <body>
+        <div class="menu">
+            <img src="img/logo.png" alt="logo" class="logo" />
+            <ul>
+                        <li><a href="Main_Page.html"  >Home</a></li>
+                        <li><a href="QuizPage.html">Quiz</a></li>
+                        <li><a href="Thumbnailpage.html">Thumbnail</a></li>
+                        <li><a href="Product_page.html">Products</a></li>
+                        <li><a href="personal.html">Student Details</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="Query_page.html">Contact Us</a></li>
+                    </ul>
+        </div>
+
+        <div id="changeclr">
+            <div class="bgclrchange">
+                <label for="bgclr" id="lable">Background colour</label>
+                <select id="bgclr" onchange="backgroundcolorselect(this.form)">
+                    <option value="Black">Black</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Red">Red</option>
+                    <option value="Yellow">Yellow</option>
+                </select>
+            </div>
+            <div class="txtclrchange">
+                <label for="txtclr" id="lable1">Text colour</label>
+                <select id="txtclr" onchange="textcolorselect(this.form)">
+                    <option value="White">White</option>
+                    <option value="Black">Black</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Red">Red</option>
+                    <option value="Yellow">Yellow</option>
+                </select>
+            </div>
+
+            <h1 class="heading" id="heading">Gallery</h1>
+
+            <div class="gallery">
+                <img src="img/cricket.jpg" alt="cricket" id="img1" />
+                <img src="img/football.jpg" alt="football" id="img2" />
+                <img src="img/rugby.jpg" alt="rugby" id="img3" />
+                <img src="img/swimming.jpg" alt="swimming" id="img4" />
+                <img src="img/voleyball.jpg" alt="voleyball" id="img5" />
+            </div>
+
+            <div class="preview" id="preview">
+                <img src="img/cricket.jpg" alt="default" id="preview-img" />
+                <div class="close-preview" onclick="closePreview()">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <div id="description"></div>
+            </div>
+        </div>
+
+        <script>
+            function getSelectedValue(selectList) {
+                return selectList[selectList.selectedIndex].value;
+            }
+
+            function backgroundcolorselect(formRef) {
+                var selectedValue = getSelectedValue(bgclr);
+                document.getElementById("changeclr").style.color = "white";
+                switch (selectedValue) {
+                    case "Black":
+                        document.body.style.backgroundColor = "black";
+                        break;
+                    case "Green":
+                        document.body.style.backgroundColor = "#009933";
+                        break;
+                    case "Blue":
+                        document.body.style.backgroundColor = "#0039e6";
+                        break;
+                    case "Red":
+                        document.body.style.backgroundColor = "#cc0000";
+                        break;
+                    case "Yellow":
+                        document.body.style.backgroundColor = " #e6e600";
+                        break;
+                }
+            }
+
+            function textcolorselect(formRef) {
+                var selectedValue = getSelectedValue(txtclr);
+                document.getElementById("description").style.color = "white";
+                document.getElementById("heading").style.color = "white";
+                document.getElementById("lable").style.color = "white";
+                document.getElementById("lable1").style.color = "white";
+                switch (selectedValue) {
+                    case "Black":
+                        document.getElementById("description").style.color =
+                            "black";
+                        document.getElementById("heading").style.color =
+                            "black";
+                        document.getElementById("lable").style.color = "black";
+                        document.getElementById("lable1").style.color = "black";
+                        break;
+                    case "Green":
+                        document.getElementById("description").style.color =
+                            "#00ff00";
+                        document.getElementById("heading").style.color =
+                            "#00ff00";
+                        document.getElementById("lable").style.color =
+                            "#00ff00";
+                        document.getElementById("lable1").style.color =
+                            "#00ff00";
+                        break;
+                    case "Blue":
+                        document.getElementById("description").style.color =
+                            "blue";
+                        document.getElementById("heading").style.color = "blue";
+                        document.getElementById("lable").style.color = "blue";
+                        document.getElementById("lable1").style.color = "blue";
+                        break;
+                    case "Red":
+                        document.getElementById("description").style.color =
+                            "red";
+                        document.getElementById("heading").style.color = "red";
+                        document.getElementById("lable").style.color = "red";
+                        document.getElementById("lable1").style.color = "red";
+                        break;
+                    case "Yellow":
+                        document.getElementById("description").style.color =
+                            "yellow";
+                        document.getElementById("heading").style.color =
+                            "yellow";
+                        document.getElementById("lable").style.color = "yellow";
+                        document.getElementById("lable1").style.color =
+                            "yellow";
+                        break;
+                }
+            }
+            var preview = document.getElementById("preview");
+            var previewImg = document.getElementById("preview-img");
+            var description = document.getElementById("description");
+            let gallery = document.querySelectorAll(".gallery > img");
+            const imagDescriptions = {
+                img1: "Cricket is a game that played with a bat and ball. There are two competing teams of 11 players. The playground is oval and there is a rectangular area in the middle called pitch. it is 20.12 meters by 3.04 meters wide. Two sets of wickets each with three sticks are set in each side of the pitch. There are horizontal pieces called bails on the wickets. The two sides take batting and bowling.",
+                img2: "Football also called as soccer. Football is game which play two teams of 11 players. Players can play this game using any part of their bodies except hands and arms, try to pass the ball into the opposite team’s goal. Only the goalkeeper has permissions to handle the ball and may do so only within the penalty area surrounding the goal. The team that scores more goals wins. Football is the most popular game in the world.",
+                img3: "Rugby was invented in the early 19th century. It is similar game to football. Rugby is a team sport which is a 15 players in a one team. The job of the game is to ground the ball behind the opponent's try line, into what is called the in goal area. Rugby is played both pass by hand and leg by kicking the ball. However, when the ball is being carried in hand it can only be throw or handed off backwards. This is because it is the progress of the player and not the ball that is decisive in this sport.",
+                img4: "Swimming is the thrust of the body through water by combination of arm and leg motions and the natural flotation of the body. Swimming is popular as an all-around body exercise and it develops and is particularly useful in therapy and as exercise for physically for persons. It is also valuable as lifesaving purposes. For activities like diving, lifesaving, surfing, underwater diving, and water polo also involve swimming.",
+                img5: "Volleyball is played by two teams of six players on each side, in which the players use their hands to hit the back and sent ball over a high net. Player always try to hit the ball touch the court within the opponents’ playing area before it can be returned. To prevent this a player on the opposite team hits the ball up and toward a teammate before it touches the court ground. that teammate tries to volley it back across the net or bat it to other teammate who volleys it across the net. A team is allowed only three hits of the ball before it must be pass over the net.",
+            };
+
+            gallery.forEach(function (item) {
+                item.addEventListener("mouseover", function () {
+                    preview.style.display = "flex";
+                    previewImg.src = item.src;
+                    description.innerHTML = imagDescriptions[item.id];
+                });
+            });
+            function closePreview() {
+                preview.style.display = "none";
+            }
+        </script>
+        <footer>
+            <div class="footer">
+                <div class="social">
+
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://lk.linkedin.com"><i class="fab fa-linkedin"></i></a>
+
+                    <p class="copyright">CK SPORTS ©️ 2021</p>
+                </div>
+                <a
+                    href="vihanga.html"
+                    id="page_editor"
+                    style="text-decoration: none; color: red"
+                    >Page Editer</a
+                >
+            </div>
+        </footer>
+    </body>
+</html>
